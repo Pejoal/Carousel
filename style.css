@@ -1,0 +1,110 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-image: linear-gradient(to right, #bbb, #eee);
+}
+
+/* Start Carosel */
+
+#carousel {
+  overflow: hidden;
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 5rem 0 1rem;
+}
+
+h1,
+h3 {
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+h1 {
+  padding-bottom: 1.5rem;
+}
+
+#carousel .carousel-container {
+  display: inline-flex;
+  transition: margin-left 0.4s ease-in;
+}
+#carousel .carousel-container img {
+  width: 500px;
+}
+#carousel .indicators {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#carousel .indicators > * {
+  width: calc(1.2rem + 1vw);
+  height: calc(1.2rem + 1vw);
+  /* height: calc(0.5rem + 1vw); */
+  background-color: #ccc;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: transform 0.2s ease-in;
+  border-radius: 50%;
+}
+#carousel .indicators > *:hover,
+#carousel .indicators > *.active {
+  background-color: #fff;
+  border: 1px solid #fff;
+  transform: scale(1.3);
+}
+#carousel .arrows .left,
+#carousel .arrows .right {
+  position: absolute;
+  top: calc(55% + 3.5rem);
+  transform: translateY(-50%);
+  z-index: 5;
+  font-size: calc(2.5rem + 2vw);
+  cursor: pointer;
+  color: #eaeaea;
+  transition: font-size 0.2s ease-in, color 0.2s ease-in;
+}
+#carousel .arrows .left {
+  left: 5%;
+}
+#carousel .arrows .right {
+  right: 5%;
+}
+#carousel .arrows .left:hover,
+#carousel .arrows .right:hover {
+  color: #fff;
+  font-size: calc(2.5rem + 2.5vw);
+}
+
+@media screen and (min-width: 750px) {
+  #carousel {
+    max-width: 700px;
+  }
+  #carousel .carousel-container img {
+    width: 700px;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  #carousel {
+    max-width: 1000px;
+  }
+  #carousel .carousel-container img {
+    width: 1000px;
+  }
+}
+
+/* End Carosel */
